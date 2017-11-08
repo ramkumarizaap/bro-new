@@ -12,7 +12,7 @@ $config['layout']['default']['css_dir']  = 'assets/css/';
 $config['layout']['default']['img_dir']     = 'assets/images/';
 
 
-$config['layout']['default']['javascripts'] = array('jquery.min','bootstrap.min','ie10-viewport-bug-workaround');
+$config['layout']['default']['javascripts'] = array('jquery.min','bootstrap.min','ie10-viewport-bug-workaround','function');
  
 $config['layout']['default']['stylesheets'] = array('bootstrap','ie10-viewport-bug-workaround','font-awesome.min','_theme');
 

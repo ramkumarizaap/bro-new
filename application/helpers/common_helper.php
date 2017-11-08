@@ -48,36 +48,30 @@ function get_ajax_row_id($where='',$table='')
 
 function get_user_role( $user_id = 0 )
 {
-    $CI= & get_instance();
+    // $CI= & get_instance();
     
-    if(!$user_id) 
-    {
-        $user_data = get_user_data();
-        return $user_data['role'];
-    }   
+    // if(!$user_id) 
+    // {
+    //     $user_data = get_user_data();
+    //     return $user_data['role_id'];
+    // }   
     
-    $CI->load->model('user_model');
-    $row = $CI->user_model->get_where(array('id' => $user_id))->row_array;
+    // $CI->load->model('user_model');
+    // $row = $CI->user_model->get_where(array('id' => $user_id))->row_array;
 
-    if( !$row )
-        return FALSE;
+    // if( !$row )
+    //     return FALSE;
 
-    return $row['role'];
+    // return $row['role_id'];
 }
 
-function get_roles()
+function get_user_by_id($where=array(),$table='')
 {
     $CI = & get_instance();
-    $CI->load->model('role_model');
-    $records = $CI->role_model->get_roles();
-
-    $roles = array();
-    foreach ($records as $id => $val) 
-    {
-        $roles[$id] = $val;
-    }
-
-    return $roles;
+    if($where)
+        $CI->db->where($where);
+    $records = $CI->db->get($table);
+    return $records->row_array();
 }
 
 function display_flashmsg($flash){
@@ -831,6 +825,43 @@ function get_working_days_by_date($startDate, $endDate)
         if (date("D", $i) != "Fri") $workingDays = $workingDays + 1;
     }
     return $workingDays;
+}
+function get_user_info()
+{
+    $user_id = get_current_user_id();
+    $role = get_user_data()['role_id'];
+    $CI = &get_instance();
+    /*Users Table*/
+    $CI->db->where("id",$user_id);
+    $CI->db->select("*,IF(role_id='1','Yes','No') as is_admin,id as user_id");
+    $CI->db->from("users");
+    $q['info'] = $CI->db->get()->row_array();
+    /*Persoanl Info Table*/
+    $CI->db->where("user_id",$user_id);
+    $CI->db->select("*");
+    $CI->db->from("personal_info");
+    $q['personal'] = $CI->db->get()->row_array();
+    /*Home Address Table*/
+    $CI->db->where("user_id",$user_id);
+    $CI->db->select("*");
+    $CI->db->from("home_address");
+    $q['home_address'] = $CI->db->get()->row_array();
+    /*Work Address Table*/
+    $CI->db->where("user_id",$user_id);
+    $CI->db->select("*");
+    $CI->db->from("work_address");
+    $q['work_address'] = $CI->db->get()->row_array();
+    /*Affiliations Table*/
+    $CI->db->where("user_id",$user_id);
+    $CI->db->select("*");
+    $CI->db->from("affiliations");
+    $q['affiliations'] = $CI->db->get()->row_array();
+    /*Family Table*/
+    $CI->db->where("user_id",$user_id);
+    $CI->db->select("*");
+    $CI->db->from("family");
+    $q['family'] = $CI->db->get()->row_array();
+    return $q;
 }
 
 

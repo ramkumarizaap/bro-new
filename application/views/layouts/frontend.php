@@ -5,7 +5,7 @@
 		<?php include_title(); ?>
         <?php include_metas(); ?>
         <?php include_links(); ?>
-		<link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="shortcut icon" href="<?=base_url();?>assets/images/favicon.png"/>
         <?php include_stylesheets(); ?>
         <?php include_raws() ?>
 
@@ -17,7 +17,7 @@
          var namespace = '<?php echo $this->namespace;?>';
          var previous_url = '<?php echo $this->previous_url;?>';
         </script>
-        <script src="<?=base_url();?>assets/js/modernizr-2.8.3.js"></script>
+        <!-- <script src="<?=base_url();?>assets/js/modernizr-2.8.3.js"></script> -->
         
 	</head>
 

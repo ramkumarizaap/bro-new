@@ -6,7 +6,9 @@ class Dashboard extends Admin_controller
 {
   function __construct()
   {
-    parent::__construct();               
+    parent::__construct();
+    if(!is_logged_in())
+      redirect('home');           
   }  
   public function index()
   {

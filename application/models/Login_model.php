@@ -20,7 +20,7 @@ class Login_model extends App_model
       $this->db->from('users');
       $this->db->where('email', $email);
       $this->db->where('password', md5($password));
-      $user = $this->db->get()->row_array();
+      $user = $this->db->get()->  row_array();
       if(count($user)>0)
       {      
         $this->session->set_userdata('user_data', $user);        

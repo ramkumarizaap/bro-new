@@ -3,9 +3,9 @@
         <div class="row">
             <header>
               <div class="text-left">
-                <a href="javascript:void(0)" class="btn btn-primary"> 
+                <a href="<?=site_url('login/logout');?>" class="btn btn-primary"> 
                   <i class="fa fa-chevron-left" aria-hidden="true"></i> 
-                  Home
+                  Sign Out
                 </a>
               </div>
           </header>
@@ -32,7 +32,7 @@
           <h4><center>Let's get started!</center></h4>
           <div class="vertical--center"></div>
           <div class="col-sm-12">
-            <a href="javascript:void(0);" class="btn btn-md btn-primary btn-block">
+            <a href="<?=site_url('profile');?>" class="btn btn-md btn-primary btn-block">
               <i class="fa fa-user" aria-hidden="true"></i>
               My Information 
             </a>
