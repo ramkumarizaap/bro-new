@@ -62,9 +62,9 @@
         <div id="york_rite" class="tab-pane fade">         
          <!-- Tab Style -->
            <ul class="nav nav-tabs interior--tab">
-            <li class="active"><a data-toggle="tab" href="#chapter">Chapter</a></li>
-            <li><a data-toggle="tab" href="#interior-tab-1">Council</a></li>
-            <li><a data-toggle="tab" href="#interior-tab-2">Commandery</a></li>
+            <li class="active"><a data-toggle="tab" onclick="tab_view('chapter','profile/chapter_add','');" href="#chapter">Chapter</a></li>
+            <li><a data-toggle="tab" onclick="tab_view('council','profile/council_add','');" href="#council">Council</a></li>
+            <li><a data-toggle="tab" onclick="tab_view('commandery','profile/commandery_add','');" href="#commandery">Commandery</a></li>
           </ul>
           <div class="tab_wrapper tab-interior">
             <div class="tab-content clearfix">
@@ -72,11 +72,11 @@
                 <h3>Chapter</h3>
               </div>
 
-              <div id="interior-tab-1" class="tab-pane fade clearfix">
+              <div id="council" class="tab-pane fade clearfix">
                 <h3>Council</h3>
               </div>
 
-              <div id="interior-tab-2" class="tab-pane fade clearfix">
+              <div id="commandery" class="tab-pane fade clearfix">
                 <h3>Commandery</h3>
               </div>              
             </div>

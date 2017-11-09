@@ -46,17 +46,21 @@ class Personal_info extends Admin_controller
     $this->data['editdata'] = get_user_info();
     $this->load->model('personal_model');
   }  
-  public function add()
+  public function add($edit_id='')
   {
   	try
     {
-      $edit_id = $this->input->post('id');
+      if($this->input->post('edit_id'))
+        $edit_id = $this->input->post('edit_id');
       $this->form_validation->set_rules($this->_personal_validation_rules);
       $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
-      if($this->form_validation->run())
+      if(count($_POST) && $this->form_validation->run())
       {
       }
-      $status = "error";
+      else
+      {
+        $status = "error";
+      }
     }
     catch (Exception $e)
     {
@@ -64,7 +68,7 @@ class Personal_info extends Admin_controller
       $msg  = $e->getMessage();
     }
   	$output = $this->load->view('frontend/personal/profile',$this->data,true);
-    return $this->_ajax_output(array('status' => $status, 'output' => $output, 'edit_id' =>"","msg"=>$_POST), TRUE);
+    return $this->_ajax_output(array('status' => $status, 'output' => $output, 'edit_id' =>$edit_id,"msg"=>$_POST), TRUE);
   }
 }
 ?>

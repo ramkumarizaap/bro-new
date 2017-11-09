@@ -6,7 +6,7 @@ function include_title($title='')
 
     //echo '<title>' . $layout->get_title() . '</title>';
     $title = (!empty($title))? $title:$layout->get_title();
-    echo '<title>' . $title . ' | Anchorpoint</title>';
+    echo '<title>' . $title . ' | Bodies, Rites & Orders</title>';
 }
 
 function include_img_path() {

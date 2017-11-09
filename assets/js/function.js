@@ -1,7 +1,7 @@
 $(function()
 {
   tab_view('chapter','profile/chapter_add','');
-  tab_view('personal_info','personal_info/add','');
+  tab_view('personal_info','profile/profile_add','');
 
     $("input[name='a_c[]']").click(function()
     {
@@ -37,7 +37,9 @@ $(function()
 function init_datepicker()
 {
   $(".singledate").datepicker({
-        format: 'mm/dd/yyyy'
+        format: 'mm/dd/yyyy',
+        autoclose:true,
+        todayHighlight:true,
     });
 }
 
@@ -139,26 +141,26 @@ function change_status(id='',type='')
 
 function tab_view(id,url,formid='')
 {
-  // var formData = "";
-  // if(formid!='')
-  // {
+  var formData = "";
+  if(formid!='')
+  {
    var form_data = $("#"+formid).serializeArray();
-   // formData = new FormData();
-   // if(id=="personal_info" && formid=="add_profile")
-   // {
-   //  // if($('#userfile')[0]!='')
-   //    // formData.append('file', $('#userfile')[0].files[0]);
-   // }
-   // $(form_data).each(function (index, element) {
-   //    formData.append(element.name, element.value);
-   //  });
-  // }
-  console.log(form_data);
+   formData = new FormData();
+   if(id=="personal_info" && formid=="add_profile")
+   {
+    // if($('#userfile')[0]!='')
+      // formData.append('file', $('#userfile')[0].files[0]);
+   }
+   $(form_data).each(function (index, element) {
+      formData.append(element.name, element.value);
+    });
+  }
     $.ajax({
         type:"POST",
         url:base_url+url,
         processData:false,  
-        data:form_data,
+        data:formData,
+        contentType:false,
         dataType:'json',
         success:function(data)
         {          

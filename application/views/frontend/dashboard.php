@@ -39,7 +39,7 @@
           </div>
 
           <div class="col-sm-12">
-            <a href="javascript:void(0);" class="btn btn-md btn-primary btn-block">
+            <a href="<?=site_url('yorksite');?>" class="btn btn-md btn-primary btn-block">
               <i class="fa fa-users" aria-hidden="true"></i>
               York Rite **
             </a>

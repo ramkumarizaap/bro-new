@@ -6,7 +6,7 @@ class Home extends Admin_controller
 {
   function __construct()
   {
-    parent::__construct();               
+    parent::__construct();
   }  
   public function index()
   {

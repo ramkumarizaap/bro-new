@@ -157,7 +157,7 @@ function displayData($data = null, $type = 'string', $row = array(), $wrap_tag_o
         case 'label':        
                 if($data == 'Active')
                     $type = 'label-success';
-                elseif($data == 'Deactive')
+                elseif($data == 'Inactive')
                     $type = 'label-danger';
                 $data = '<label class="label '.$type.'">'.$data.'</label>';
                 break;        

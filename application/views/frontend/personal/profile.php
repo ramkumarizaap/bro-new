@@ -1,4 +1,5 @@
 <form name="add_profile" action="" method="post" id="add_profile">
+  <input type="hidden" name="id" value="<?=$editdata['info']['id'];?>">
   <div class="col-sm-12">
     <div class="col-sm-6 col-md-3">
       <!--  -->

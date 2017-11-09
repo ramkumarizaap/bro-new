@@ -1,5 +1,6 @@
 
 
+
 body {
   background-color: #708dab;
 }
@@ -27,11 +28,12 @@ header {
 }
 
 .vertical--center  {
-  height: 100px;
-  width: 0;
-  border:1px solid black;
-  margin: 0 auto;
-  margin-bottom: 20px;
+     border: 1px solid black;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0px !important;
+    width: 0;
+    height: 100px;
 }
 
 
@@ -46,7 +48,6 @@ header {
 .get--started {
   max-width: 430px;
   padding: 15px;
-  margin-top: 100px;
 }
 
 .get--started h4 {
@@ -69,7 +70,6 @@ header {
   width: 2em;
   height: 2em;
   line-height: 2em;
- font-size:14px; 
 }
 
 
@@ -184,7 +184,6 @@ footer {
     padding-top: calc(.9rem + 1px);
     padding-bottom: calc(.9rem + 1px);
     margin-bottom: 0;
-    font-weight: normal;
     line-height: 1.5;
 }
 
@@ -246,8 +245,88 @@ footer {
   right:15px;
 }
 
+.view-title-wrapper {
+  margin-top: 15px;
+}
+
+.view-title-wrapper h3 {
+  color:#324973;
+  font-weight: bold;
+}
+
+.view-title-wrapper h4 {
+  color: #958f83
+}
+
+.view-title-image  {
+  padding: 10px;
+  background:#fff;
+  color:#ddd;
+  margin-top: 15px;
+  border-radius: 5px;
+  border:1px solid #ddd;
+}
+
+.view-title-image img  {
+  
+}
+
+.view-detail--buttons .btn {
+  margin-top: 15px;
+}
+
+.top-info {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  border:1px solid #ddd;
+  background:#fff;
+}
 
 
+/**/
+.table--record {
+  margin-top: 15px;
+}
+.table-fixed thead {
+  width: 100%;
+}
+.table-fixed tbody {
+  max-height: 350px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+
+.table-fixed > tbody > tr:hover {
+  /*background-color: #f5f5f5;*/
+}
+
+.table-fixed > tbody > tr:nth-of-type(odd)  {
+  background-color: #f5f5f5;
+}
+
+
+.table-fixed > tbody > tr:before,
+.table-fixed > tbody > tr:after {
+    content: " ";
+    display: table;
+}
+
+.table-fixed > tbody > tr:after {
+    clear: both;
+}
+
+.table-fixed > tbody > tr {
+    *zoom: 1;
+}
+/**/
 
 @media (min-width: 768px) {
 
@@ -294,10 +373,6 @@ footer {
 @media (max-width: 767px) {
 
 }
-
-
-
-
 
 span.required{color: red;}
 .padding-left-0{padding-left: 0px;}

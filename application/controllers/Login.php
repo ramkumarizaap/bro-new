@@ -22,7 +22,7 @@ class Login extends Admin_controller
     public function index()
     {
         if(is_logged_in())
-            redirect('home');
+            redirect('dashboard');
         
         $this->login();
     }
